@@ -6317,8 +6317,12 @@ onUnmounted(() => {
   }
 
   .health-container {
-    padding: 12px;
+    padding: 8px;
     border-width: 2px;
+  }
+
+  .tab-panel {
+    gap: 8px;
   }
 
   .health-header {
@@ -6340,32 +6344,36 @@ onUnmounted(() => {
 
   .character-selector-header {
     flex-direction: column;
-    gap: 8px;
-    padding: 8px;
+    gap: 6px;
+    padding: 6px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom-width: 1px;
   }
 
   .selector-label {
-    font-size: 16px;
+    font-size: 14px;
 
     i {
-      font-size: 18px;
+      font-size: 16px;
     }
   }
 
   .character-buttons {
     flex-wrap: wrap;
-    gap: 6px;
-    max-height: 120px;
+    gap: 4px;
+    max-height: 80px;
     overflow-y: auto;
     padding-right: 4px;
+    -webkit-overflow-scrolling: touch;
   }
 
   .character-button {
-    padding: 6px 10px;
-    font-size: 12px;
+    padding: 4px 8px;
+    font-size: 11px;
 
     i {
-      font-size: 14px;
+      font-size: 12px;
     }
   }
 
@@ -6556,49 +6564,140 @@ onUnmounted(() => {
     }
   }
 
-  .equipment-layout {
+  // 装备内容区域：改为纵向布局
+  .equipment-content {
     flex-direction: column;
     gap: 12px;
   }
 
-  .equipment-section {
+  // 左侧和右侧装备区域：全宽显示
+  .equipment-left,
+  .equipment-right {
     width: 100%;
+    flex: none;
   }
 
-  .equipment-title {
-    font-size: 14px;
+  // 装备类型选择器
+  .equipment-type-selector {
+    gap: 8px;
     padding: 8px;
+  }
+
+  .type-button {
+    padding: 6px 10px;
+    font-size: 11px;
+
+    i {
+      font-size: 14px;
+    }
+  }
+
+  // 装备列表区域
+  .equipment-list {
+    max-height: 300px;
+    gap: 10px;
+  }
+
+  .weapon-slots,
+  .armor-slots {
+    gap: 10px;
+  }
+
+  .weapon-section,
+  .armor-section {
+    gap: 6px;
+  }
+
+  .section-title {
+    padding: 8px;
+    font-size: 12px;
+
+    i {
+      font-size: 14px;
+    }
+  }
+
+  .weapon-slot,
+  .armor-slot {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .equipment-icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
 
     i {
       font-size: 16px;
     }
   }
 
-  .equipment-list {
-    max-height: 250px;
+  .equipment-name {
+    font-size: 11px;
   }
 
-  .equipment-item {
+  // 装备详情区域
+  .equipment-description {
+    padding: 10px;
+    max-height: 200px;
+    min-height: 150px;
+  }
+
+  // 饰品区域
+  .accessories-header {
+    padding: 8px;
+    font-size: 12px;
+
+    i {
+      font-size: 14px;
+    }
+  }
+
+  .accessories-list {
+    gap: 8px;
+  }
+
+  .accessory-slot {
     padding: 8px;
     gap: 8px;
   }
 
-  .equipment-icon {
-    width: 36px;
-    height: 36px;
+  .accessories-description {
+    padding: 10px;
+    max-height: 200px;
+    min-height: 150px;
+  }
+
+  // 可装备点数显示
+  .equipment-panel {
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .equipment-points-display {
+    padding: 8px 12px;
+    margin-bottom: 12px;
+  }
+
+  .points-label {
+    font-size: 12px;
 
     i {
-      font-size: 18px;
+      font-size: 14px;
     }
   }
 
-  .equipment-name {
-    font-size: 12px;
+  .points-values {
+    font-size: 14px;
   }
 
-  .equipment-description {
-    padding: 10px;
-    max-height: 150px;
+  .points-current {
+    font-size: 16px;
+  }
+
+  .points-limit {
+    font-size: 14px;
   }
 
   .skills-tabs {
@@ -6894,8 +6993,67 @@ onUnmounted(() => {
     max-height: 200px;
   }
 
-  .skill-detail-icon,
+  .equipment-content {
+    gap: 8px;
+  }
+
+  .equipment-list {
+    max-height: 250px;
+  }
+
+  .weapon-slot,
+  .armor-slot,
+  .accessory-slot {
+    padding: 6px;
+    gap: 6px;
+  }
+
   .equipment-icon {
+    width: 28px;
+    height: 28px;
+
+    i {
+      font-size: 14px;
+    }
+  }
+
+  .equipment-name {
+    font-size: 10px;
+  }
+
+  .equipment-description,
+  .accessories-description {
+    padding: 8px;
+    max-height: 150px;
+    min-height: 120px;
+  }
+
+  .equipment-points-display {
+    padding: 6px 10px;
+    margin-bottom: 8px;
+  }
+
+  .points-label {
+    font-size: 11px;
+
+    i {
+      font-size: 12px;
+    }
+  }
+
+  .points-values {
+    font-size: 12px;
+  }
+
+  .points-current {
+    font-size: 14px;
+  }
+
+  .points-limit {
+    font-size: 12px;
+  }
+
+  .skill-detail-icon {
     width: 32px;
     height: 32px;
 
