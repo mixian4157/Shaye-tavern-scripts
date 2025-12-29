@@ -6561,10 +6561,35 @@ onUnmounted(() => {
     }
   }
 
-  // 在极小屏幕上改为单列
+  // 在极小屏幕上改为单列，并增加宽度（约1.8倍）
   @media (max-width: 360px) {
     .info-row {
       grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .info-item {
+      gap: 8px;
+      padding: 10px;
+      background-color: rgba(0, 0, 0, 0.15);
+      border: 1px solid rgba(192, 192, 192, 0.2);
+      border-radius: 6px;
+    }
+
+    .info-label {
+      font-size: 14px;
+
+      i {
+        font-size: 16px;
+      }
+    }
+
+    .info-value {
+      font-size: 16px;
+    }
+
+    .character-info-content {
+      gap: 10px;
     }
   }
 
