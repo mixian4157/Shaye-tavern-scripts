@@ -6651,6 +6651,50 @@ onUnmounted(() => {
         font-size: 16px;
       }
     }
+
+    .equipment-points-display {
+      padding: 5px 6px;
+      margin-bottom: 6px;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+
+    .points-label {
+      font-size: 9px;
+      gap: 3px;
+      flex-shrink: 1;
+      min-width: 0;
+
+      i {
+        font-size: 10px;
+        flex-shrink: 0;
+      }
+
+      span {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 80px;
+      }
+    }
+
+    .points-values {
+      font-size: 10px;
+      gap: 2px;
+      flex-shrink: 0;
+    }
+
+    .points-current {
+      font-size: 11px;
+    }
+
+    .points-separator {
+      font-size: 10px;
+    }
+
+    .points-limit {
+      font-size: 10px;
+    }
   }
 
   .info-label {
@@ -6951,28 +6995,45 @@ onUnmounted(() => {
   }
 
   .equipment-points-display {
-    padding: 8px 12px;
+    padding: 8px 10px;
     margin-bottom: 12px;
+    gap: 8px;
   }
 
   .points-label {
-    font-size: 12px;
+    font-size: 11px;
+    gap: 6px;
+    flex-shrink: 1;
+    min-width: 0;
 
     i {
-      font-size: 14px;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+
+    span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
     }
   }
 
   .points-values {
-    font-size: 14px;
+    font-size: 12px;
+    gap: 4px;
+    flex-shrink: 0;
   }
 
   .points-current {
-    font-size: 16px;
+    font-size: 14px;
+  }
+
+  .points-separator {
+    font-size: 12px;
   }
 
   .points-limit {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .skills-tabs {
@@ -7347,28 +7408,47 @@ onUnmounted(() => {
   }
 
   .equipment-points-display {
-    padding: 6px 10px;
+    padding: 6px 8px;
     margin-bottom: 8px;
+    gap: 6px;
+    flex-wrap: wrap;
   }
 
   .points-label {
-    font-size: 11px;
+    font-size: 10px;
+    gap: 4px;
+    flex-shrink: 1;
+    min-width: 0;
 
     i {
-      font-size: 12px;
+      font-size: 11px;
+      flex-shrink: 0;
+    }
+
+    span {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 100px;
     }
   }
 
   .points-values {
-    font-size: 12px;
+    font-size: 11px;
+    gap: 3px;
+    flex-shrink: 0;
   }
 
   .points-current {
-    font-size: 14px;
+    font-size: 12px;
+  }
+
+  .points-separator {
+    font-size: 11px;
   }
 
   .points-limit {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .skill-detail-icon {
