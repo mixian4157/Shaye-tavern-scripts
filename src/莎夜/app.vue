@@ -6278,14 +6278,17 @@ onUnmounted(() => {
   .tab-navigation {
     flex-direction: row;
     min-width: 100%;
+    max-width: 100%;
     overflow-x: auto;
     overflow-y: hidden;
-    gap: 6px;
-    padding-bottom: 4px;
+    gap: 4px;
+    padding: 4px 0;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(192, 192, 192, 0.5) rgba(0, 0, 0, 0.2);
 
     &::-webkit-scrollbar {
-      height: 4px;
+      height: 3px;
     }
 
     &::-webkit-scrollbar-track {
@@ -6296,23 +6299,30 @@ onUnmounted(() => {
     &::-webkit-scrollbar-thumb {
       background: rgba(192, 192, 192, 0.5);
       border-radius: 2px;
+
+      &:hover {
+        background: rgba(192, 192, 192, 0.7);
+      }
     }
   }
 
   .tab-button {
     flex-direction: row;
-    padding: 8px 12px;
+    padding: 6px 8px;
     min-width: auto;
     flex-shrink: 0;
-    font-size: 11px;
-    gap: 4px;
+    font-size: 10px;
+    gap: 3px;
+    white-space: nowrap;
 
     i {
-      font-size: 16px;
+      font-size: 14px;
+      flex-shrink: 0;
     }
 
     span {
       white-space: nowrap;
+      flex-shrink: 0;
     }
   }
 
@@ -6951,11 +6961,12 @@ onUnmounted(() => {
   }
 
   .tab-button {
-    padding: 6px 8px;
-    font-size: 10px;
+    padding: 5px 6px;
+    font-size: 9px;
+    gap: 2px;
 
     i {
-      font-size: 14px;
+      font-size: 12px;
     }
   }
 
