@@ -6281,9 +6281,9 @@ onUnmounted(() => {
 @media (max-width: 768px) {
   .app-wrapper {
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
     max-width: 100%;
-    padding: 8px;
+    padding: 4px;
   }
 
   .tab-navigation {
@@ -6338,12 +6338,12 @@ onUnmounted(() => {
   }
 
   .health-container {
-    padding: 8px;
+    padding: 10px;
     border-width: 2px;
   }
 
   .character-selector-header {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     padding-bottom: 8px;
     gap: 6px;
   }
@@ -6405,17 +6405,17 @@ onUnmounted(() => {
   }
 
   .health-content {
-    gap: 8px;
+    gap: 10px;
   }
 
   .health-top-section {
     flex-direction: row;
-    gap: 10px;
+    gap: 12px;
     align-items: flex-start;
   }
 
   .character-info {
-    gap: 6px;
+    gap: 8px;
     flex: 1;
     min-width: 0;
   }
@@ -6423,13 +6423,13 @@ onUnmounted(() => {
   .status-bars {
     flex: 1;
     min-width: 0;
-    gap: 8px;
+    gap: 10px;
   }
 
   .info-row {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 6px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
   }
 
   .info-item {
@@ -6441,18 +6441,11 @@ onUnmounted(() => {
     }
   }
 
-  // 在较小屏幕上改为两列
-  @media (max-width: 600px) {
-    .info-row {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  // 在超小屏幕上改为单列，并调整布局
+  // 在超小屏幕上改为单列
   @media (max-width: 480px) {
     .health-top-section {
       flex-direction: column;
-      gap: 8px;
+      gap: 10px;
     }
 
     .character-info,
@@ -6497,23 +6490,16 @@ onUnmounted(() => {
     font-size: 11px;
   }
 
-  .attributes-radar {
-    padding-top: 8px;
-    border-top-width: 1px;
-    margin-top: 4px;
-  }
-
   .radar-canvas {
-    max-width: 120px;
+    max-width: 150px;
   }
 
   .attributes-table {
-    gap: 4px;
-    padding-top: 4px;
+    gap: 6px;
   }
 
   .table-row {
-    padding: 6px;
+    padding: 8px;
   }
 
   .table-label {
