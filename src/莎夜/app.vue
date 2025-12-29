@@ -6265,4 +6265,648 @@ onUnmounted(() => {
     }
   }
 }
+
+// 移动端响应式优化
+@media (max-width: 768px) {
+  .app-wrapper {
+    flex-direction: column;
+    gap: 8px;
+    max-width: 100%;
+    padding: 8px;
+  }
+
+  .tab-navigation {
+    flex-direction: row;
+    min-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    gap: 6px;
+    padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: rgba(0, 0, 0, 0.2);
+      border-radius: 2px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgba(192, 192, 192, 0.5);
+      border-radius: 2px;
+    }
+  }
+
+  .tab-button {
+    flex-direction: row;
+    padding: 8px 12px;
+    min-width: auto;
+    flex-shrink: 0;
+    font-size: 11px;
+    gap: 4px;
+
+    i {
+      font-size: 16px;
+    }
+
+    span {
+      white-space: nowrap;
+    }
+  }
+
+  .health-container {
+    padding: 12px;
+    border-width: 2px;
+  }
+
+  .health-header {
+    padding-bottom: 8px;
+    margin-bottom: 8px;
+
+    i {
+      font-size: 18px;
+    }
+
+    h2 {
+      font-size: 16px;
+    }
+  }
+
+  .tab-content {
+    gap: 12px;
+  }
+
+  .character-selector-header {
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+  }
+
+  .selector-label {
+    font-size: 16px;
+
+    i {
+      font-size: 18px;
+    }
+  }
+
+  .character-buttons {
+    flex-wrap: wrap;
+    gap: 6px;
+    max-height: 120px;
+    overflow-y: auto;
+    padding-right: 4px;
+  }
+
+  .character-button {
+    padding: 6px 10px;
+    font-size: 12px;
+
+    i {
+      font-size: 14px;
+    }
+  }
+
+  .health-content {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .character-info {
+    gap: 8px;
+  }
+
+  .info-row {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .info-item {
+    width: 100%;
+
+    &.small {
+      width: 100%;
+    }
+  }
+
+  .info-label {
+    font-size: 12px;
+
+    i {
+      font-size: 14px;
+    }
+  }
+
+  .info-value {
+    font-size: 14px;
+  }
+
+  .health-bar-container {
+    gap: 6px;
+  }
+
+  .health-bar-label {
+    font-size: 11px;
+
+    i {
+      font-size: 12px;
+    }
+  }
+
+  .health-bar-fill {
+    height: 20px;
+  }
+
+  .health-value {
+    font-size: 11px;
+  }
+
+  .radar-canvas {
+    max-width: 150px;
+  }
+
+  .attributes-table {
+    gap: 6px;
+  }
+
+  .table-row {
+    padding: 8px;
+  }
+
+  .table-label {
+    font-size: 11px;
+
+    i {
+      font-size: 12px;
+      width: 14px;
+    }
+  }
+
+  .table-value {
+    font-size: 14px;
+    min-width: 35px;
+  }
+
+  .soul-awakening {
+    gap: 6px;
+  }
+
+  .soul-label {
+    font-size: 12px;
+
+    i {
+      font-size: 14px;
+    }
+  }
+
+  .circular-progress-container {
+    width: 80px;
+    height: 80px;
+  }
+
+  .weight-wallet-container {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .weight-display,
+  .wallet-display {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .weight-label,
+  .wallet-label {
+    font-size: 12px;
+
+    i {
+      font-size: 14px;
+    }
+  }
+
+  .weight-value {
+    font-size: 12px;
+  }
+
+  .wallet-currencies {
+    gap: 6px;
+  }
+
+  .currency-item {
+    font-size: 11px;
+
+    i {
+      font-size: 12px;
+    }
+
+    .currency-label {
+      font-size: 11px;
+      min-width: 35px;
+    }
+
+    .currency-value {
+      font-size: 12px;
+    }
+  }
+
+  .inventory-layout {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .inventory-list {
+    max-height: 300px;
+  }
+
+  .inventory-item {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .inventory-icon {
+    width: 32px;
+    height: 32px;
+
+    i {
+      font-size: 16px;
+    }
+  }
+
+  .inventory-name {
+    font-size: 12px;
+  }
+
+  .inventory-count {
+    font-size: 11px;
+  }
+
+  .equipment-tabs {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .equipment-tab {
+    padding: 6px 10px;
+    font-size: 11px;
+
+    i {
+      font-size: 14px;
+    }
+  }
+
+  .equipment-layout {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .equipment-section {
+    width: 100%;
+  }
+
+  .equipment-title {
+    font-size: 14px;
+    padding: 8px;
+
+    i {
+      font-size: 16px;
+    }
+  }
+
+  .equipment-list {
+    max-height: 250px;
+  }
+
+  .equipment-item {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .equipment-icon {
+    width: 36px;
+    height: 36px;
+
+    i {
+      font-size: 18px;
+    }
+  }
+
+  .equipment-name {
+    font-size: 12px;
+  }
+
+  .equipment-description {
+    padding: 10px;
+    max-height: 150px;
+  }
+
+  .skills-tabs {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .skill-type-tab {
+    padding: 6px 10px;
+    font-size: 11px;
+
+    i {
+      font-size: 14px;
+    }
+  }
+
+  .skills-layout {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .skills-list {
+    max-height: 250px;
+  }
+
+  .skill-item {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .skill-name {
+    font-size: 12px;
+  }
+
+  .skill-type-badge {
+    font-size: 10px;
+    padding: 2px 4px;
+  }
+
+  .skill-details {
+    padding: 12px;
+  }
+
+  .skill-detail-header {
+    gap: 8px;
+    padding-bottom: 12px;
+  }
+
+  .skill-detail-icon {
+    width: 48px;
+    height: 48px;
+
+    i {
+      font-size: 24px;
+    }
+  }
+
+  .skill-detail-title {
+    h3 {
+      font-size: 16px;
+    }
+  }
+
+  .skill-detail-meta {
+    font-size: 11px;
+  }
+
+  .skill-detail-badge {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+
+  .description-cost {
+    font-size: 12px;
+  }
+
+  .description-text {
+    p {
+      font-size: 12px;
+    }
+  }
+
+  .quest-type-tabs {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .quest-type-tab {
+    padding: 6px 10px;
+    font-size: 11px;
+
+    i {
+      font-size: 14px;
+    }
+  }
+
+  .quest-layout {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .quest-list {
+    max-height: 250px;
+  }
+
+  .quest-item {
+    padding: 8px;
+    gap: 6px;
+  }
+
+  .quest-name {
+    font-size: 13px;
+  }
+
+  .quest-meta {
+    font-size: 11px;
+  }
+
+  .quest-status {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+
+  .quest-details {
+    padding: 12px;
+  }
+
+  .quest-detail-header {
+    padding-bottom: 12px;
+
+    h3 {
+      font-size: 16px;
+    }
+  }
+
+  .quest-detail-meta {
+    font-size: 11px;
+  }
+
+  .quest-detail-badge {
+    font-size: 10px;
+    padding: 3px 6px;
+  }
+
+  .quest-detail-content {
+    h4 {
+      font-size: 14px;
+      padding-bottom: 6px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+
+    ul {
+      font-size: 12px;
+      padding-left: 16px;
+      line-height: 1.6;
+    }
+  }
+
+  .points-display {
+    padding: 10px 12px;
+    margin-bottom: 12px;
+  }
+
+  .points-label {
+    font-size: 12px;
+
+    i {
+      font-size: 14px;
+    }
+  }
+
+  .points-value {
+    font-size: 16px;
+  }
+
+  .points-current {
+    font-size: 18px;
+  }
+
+  .detail-row {
+    font-size: 11px;
+    flex-direction: column;
+    gap: 4px;
+
+    .detail-label {
+      min-width: auto;
+      font-size: 11px;
+
+      i {
+        font-size: 11px;
+      }
+    }
+
+    .detail-value {
+      font-size: 11px;
+    }
+  }
+
+  // 确保所有滚动容器在移动端可用
+  .skills-list,
+  .skill-details,
+  .quest-list,
+  .quest-details,
+  .inventory-list,
+  .equipment-list,
+  .equipment-description {
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+// 超小屏幕优化（小于480px）
+@media (max-width: 480px) {
+  .app-wrapper {
+    padding: 4px;
+    gap: 4px;
+  }
+
+  .health-container {
+    padding: 8px;
+    border-width: 1px;
+  }
+
+  .tab-button {
+    padding: 6px 8px;
+    font-size: 10px;
+
+    i {
+      font-size: 14px;
+    }
+  }
+
+  .health-header {
+    h2 {
+      font-size: 14px;
+    }
+  }
+
+  .character-buttons {
+    max-height: 100px;
+  }
+
+  .character-button {
+    padding: 4px 8px;
+    font-size: 11px;
+  }
+
+  .info-value {
+    font-size: 13px;
+  }
+
+  .health-bar-fill {
+    height: 18px;
+  }
+
+  .health-value {
+    font-size: 10px;
+  }
+
+  .radar-canvas {
+    max-width: 120px;
+  }
+
+  .circular-progress-container {
+    width: 60px;
+    height: 60px;
+  }
+
+  .weight-display,
+  .wallet-display {
+    padding: 8px;
+  }
+
+  .currency-item {
+    font-size: 10px;
+
+    .currency-label {
+      min-width: 30px;
+      font-size: 10px;
+    }
+
+    .currency-value {
+      font-size: 11px;
+    }
+  }
+
+  .inventory-list,
+  .equipment-list,
+  .skills-list,
+  .quest-list {
+    max-height: 200px;
+  }
+
+  .skill-detail-icon,
+  .equipment-icon {
+    width: 32px;
+    height: 32px;
+
+    i {
+      font-size: 16px;
+    }
+  }
+
+  .skill-detail-title h3,
+  .quest-detail-header h3 {
+    font-size: 14px;
+  }
+}
 </style>
