@@ -6338,8 +6338,14 @@ onUnmounted(() => {
   }
 
   .health-container {
-    padding: 10px;
+    padding: 8px;
     border-width: 2px;
+  }
+
+  .character-selector-header {
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+    gap: 6px;
   }
 
   .tab-panel {
@@ -6399,17 +6405,17 @@ onUnmounted(() => {
   }
 
   .health-content {
-    gap: 10px;
+    gap: 8px;
   }
 
   .health-top-section {
     flex-direction: row;
-    gap: 12px;
+    gap: 10px;
     align-items: flex-start;
   }
 
   .character-info {
-    gap: 8px;
+    gap: 6px;
     flex: 1;
     min-width: 0;
   }
@@ -6417,52 +6423,58 @@ onUnmounted(() => {
   .status-bars {
     flex: 1;
     min-width: 0;
-  }
-
-  // 在移动端，如果空间足够，保持两列布局；如果空间不足，改为单列
-  @media (max-width: 600px) {
-    .health-top-section {
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .character-info,
-    .status-bars {
-      width: 100%;
-    }
+    gap: 8px;
   }
 
   .info-row {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
   }
 
   .info-item {
     width: 100%;
+    gap: 4px;
 
     &.small {
       width: 100%;
     }
   }
 
-  // 在超小屏幕上改为单列
+  // 在较小屏幕上改为两列
   @media (max-width: 600px) {
+    .info-row {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  // 在超小屏幕上改为单列，并调整布局
+  @media (max-width: 480px) {
+    .health-top-section {
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .character-info,
+    .status-bars {
+      width: 100%;
+    }
+
     .info-row {
       grid-template-columns: 1fr;
     }
   }
 
   .info-label {
-    font-size: 12px;
+    font-size: 11px;
 
     i {
-      font-size: 14px;
+      font-size: 12px;
     }
   }
 
   .info-value {
-    font-size: 14px;
+    font-size: 13px;
   }
 
   .health-bar-container {
@@ -6485,16 +6497,23 @@ onUnmounted(() => {
     font-size: 11px;
   }
 
+  .attributes-radar {
+    padding-top: 8px;
+    border-top-width: 1px;
+    margin-top: 4px;
+  }
+
   .radar-canvas {
-    max-width: 150px;
+    max-width: 120px;
   }
 
   .attributes-table {
-    gap: 6px;
+    gap: 4px;
+    padding-top: 4px;
   }
 
   .table-row {
-    padding: 8px;
+    padding: 6px;
   }
 
   .table-label {
