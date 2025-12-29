@@ -6561,35 +6561,95 @@ onUnmounted(() => {
     }
   }
 
-  // 在极小屏幕上改为单列，并增加宽度（约1.8倍）
+  // 在极小屏幕上改为单列，并大幅增加宽度（约1.8倍）
   @media (max-width: 360px) {
+    // 减少外层容器的padding，为内容留出更多空间
+    .app-wrapper {
+      padding: 1px;
+      gap: 3px;
+      max-width: 100%;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .health-container {
+      padding: 4px;
+      border-width: 1px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .health-content {
+      gap: 8px;
+      padding: 0;
+      width: 100%;
+    }
+
+    .health-top-section {
+      gap: 10px;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+
+    .character-info {
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      gap: 8px;
+    }
+
+    .character-info-content {
+      gap: 14px;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+
     .info-row {
       grid-template-columns: 1fr;
-      gap: 10px;
+      gap: 14px;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      box-sizing: border-box;
     }
 
     .info-item {
-      gap: 8px;
-      padding: 10px;
-      background-color: rgba(0, 0, 0, 0.15);
-      border: 1px solid rgba(192, 192, 192, 0.2);
-      border-radius: 6px;
+      gap: 12px;
+      padding: 16px 14px;
+      background-color: rgba(0, 0, 0, 0.25);
+      border: 2px solid rgba(192, 192, 192, 0.4);
+      border-radius: 10px;
+      width: 100%;
+      box-sizing: border-box;
+      min-width: 0;
+      margin: 0;
     }
 
     .info-label {
-      font-size: 14px;
+      font-size: 17px;
+      font-weight: 700;
+      gap: 8px;
 
       i {
-        font-size: 16px;
+        font-size: 20px;
       }
     }
 
     .info-value {
-      font-size: 16px;
+      font-size: 20px;
+      font-weight: 700;
     }
 
-    .character-info-content {
-      gap: 10px;
+    .mobile-collapse-header {
+      padding: 10px 12px;
+      font-size: 15px;
+      margin-bottom: 10px;
+
+      i {
+        font-size: 16px;
+      }
     }
   }
 
