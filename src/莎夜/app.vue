@@ -6450,13 +6450,13 @@ onUnmounted(() => {
   }
 
   .health-content {
-    gap: 10px;
+    gap: 8px;
   }
 
   .health-top-section {
-    flex-direction: row;
-    gap: 12px;
-    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
   }
 
   // 移动端折叠标题样式（仅在移动端显示）
@@ -6506,33 +6506,33 @@ onUnmounted(() => {
   }
 
   .character-info {
-    gap: 8px;
-    flex: 1;
-    min-width: 0;
+    gap: 6px;
+    width: 100%;
+    flex: none;
   }
 
   .character-info-content {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 6px;
   }
 
   .status-bars {
-    flex: 1;
-    min-width: 0;
-    gap: 10px;
+    width: 100%;
+    flex: none;
+    gap: 8px;
   }
 
   .status-bars-content {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 8px;
   }
 
   .info-row {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
   }
 
   .info-item {
@@ -6544,20 +6544,10 @@ onUnmounted(() => {
     }
   }
 
-  // 在超小屏幕上改为单列
+  // 在超小屏幕上改为两列
   @media (max-width: 480px) {
-    .health-top-section {
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .character-info,
-    .status-bars {
-      width: 100%;
-    }
-
     .info-row {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
     }
 
     .mobile-collapse-header {
@@ -6568,6 +6558,13 @@ onUnmounted(() => {
       i {
         font-size: 12px;
       }
+    }
+  }
+
+  // 在极小屏幕上改为单列
+  @media (max-width: 360px) {
+    .info-row {
+      grid-template-columns: 1fr;
     }
   }
 
