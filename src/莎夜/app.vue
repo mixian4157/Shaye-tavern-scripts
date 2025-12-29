@@ -6705,9 +6705,24 @@ onUnmounted(() => {
     gap: 6px;
   }
 
+  // 技能类型切换按钮：在移动端固定在顶部
+  .skill-type-tabs {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #808080; // 与面板背景色一致
+    padding: 8px 12px;
+    margin: 0;
+    border-bottom: 2px solid rgba(192, 192, 192, 0.3);
+    margin-bottom: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); // 添加阴影以增强可见性
+  }
+
   .skill-type-tab {
     padding: 6px 10px;
     font-size: 11px;
+    flex: 1;
+    min-width: 0;
 
     i {
       font-size: 14px;
@@ -6780,14 +6795,26 @@ onUnmounted(() => {
     }
   }
 
+  // 任务类型切换按钮：在移动端固定在顶部
   .quest-type-tabs {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #808080; // 与面板背景色一致
+    padding: 8px 12px;
+    margin: 0;
+    border-bottom: 2px solid rgba(192, 192, 192, 0.3);
+    margin-bottom: 8px;
     flex-wrap: wrap;
     gap: 6px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); // 添加阴影以增强可见性
   }
 
   .quest-type-tab {
     padding: 6px 10px;
     font-size: 11px;
+    flex: 1;
+    min-width: 0;
 
     i {
       font-size: 14px;
