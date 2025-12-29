@@ -6338,7 +6338,7 @@ onUnmounted(() => {
   }
 
   .health-container {
-    padding: 8px;
+    padding: 10px;
     border-width: 2px;
   }
 
@@ -6399,25 +6399,42 @@ onUnmounted(() => {
   }
 
   .health-content {
-    gap: 12px;
+    gap: 10px;
   }
 
   .health-top-section {
-    flex-direction: column;
+    flex-direction: row;
     gap: 12px;
+    align-items: flex-start;
   }
 
   .character-info {
     gap: 8px;
-    width: 100%;
+    flex: 1;
+    min-width: 0;
   }
 
   .status-bars {
-    width: 100%;
+    flex: 1;
+    min-width: 0;
+  }
+
+  // 在移动端，如果空间足够，保持两列布局；如果空间不足，改为单列
+  @media (max-width: 600px) {
+    .health-top-section {
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .character-info,
+    .status-bars {
+      width: 100%;
+    }
   }
 
   .info-row {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 8px;
   }
 
@@ -6426,6 +6443,13 @@ onUnmounted(() => {
 
     &.small {
       width: 100%;
+    }
+  }
+
+  // 在超小屏幕上改为单列
+  @media (max-width: 600px) {
+    .info-row {
+      grid-template-columns: 1fr;
     }
   }
 
