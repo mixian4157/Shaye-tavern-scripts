@@ -49,129 +49,167 @@
               <div class="health-top-section">
                 <!-- 左侧：角色信息 -->
                 <div class="character-info">
-                  <!-- 第一行：名称、等级、生命阶层 -->
-                  <div class="info-row">
-                    <div class="info-item">
-                      <div class="info-label">
-                        <i class="fas fa-user"></i>
-                        <span>名称</span>
-                      </div>
-                      <div class="info-value">{{ characterName || '未知' }}</div>
-                    </div>
-                    <div class="info-item">
-                      <div class="info-label">
-                        <i class="fas fa-level-up-alt"></i>
-                        <span>等级</span>
-                      </div>
-                      <div class="info-value">{{ characterLevel || '未知' }}</div>
-                    </div>
-                    <div class="info-item">
-                      <div class="info-label">
-                        <i class="fas fa-layer-group"></i>
-                        <span>生命阶层</span>
-                      </div>
-                      <div class="info-value">{{ characterLifeTier || '未知' }}</div>
-                    </div>
+                  <!-- 移动端折叠标题 -->
+                  <div
+                    class="mobile-collapse-header"
+                    @click="collapsedSections.characterInfo = !collapsedSections.characterInfo"
+                  >
+                    <i class="fas fa-user"></i>
+                    <span>角色信息</span>
+                    <i
+                      :class="[
+                        'fas',
+                        collapsedSections.characterInfo ? 'fa-chevron-down' : 'fa-chevron-up',
+                        'collapse-icon',
+                      ]"
+                    ></i>
                   </div>
+                  <div v-if="!collapsedSections.characterInfo" class="character-info-content">
+                    <!-- 第一行：名称、等级、生命阶层 -->
+                    <div class="info-row">
+                      <div class="info-item">
+                        <div class="info-label">
+                          <i class="fas fa-user"></i>
+                          <span>名称</span>
+                        </div>
+                        <div class="info-value">{{ characterName || '未知' }}</div>
+                      </div>
+                      <div class="info-item">
+                        <div class="info-label">
+                          <i class="fas fa-level-up-alt"></i>
+                          <span>等级</span>
+                        </div>
+                        <div class="info-value">{{ characterLevel || '未知' }}</div>
+                      </div>
+                      <div class="info-item">
+                        <div class="info-label">
+                          <i class="fas fa-layer-group"></i>
+                          <span>生命阶层</span>
+                        </div>
+                        <div class="info-value">{{ characterLifeTier || '未知' }}</div>
+                      </div>
+                    </div>
 
-                  <!-- 第二行：种族、年龄 -->
-                  <div class="info-row">
-                    <div class="info-item small">
-                      <div class="info-label">
-                        <i class="fas fa-dragon"></i>
-                        <span>种族</span>
+                    <!-- 第二行：种族、年龄 -->
+                    <div class="info-row">
+                      <div class="info-item small">
+                        <div class="info-label">
+                          <i class="fas fa-dragon"></i>
+                          <span>种族</span>
+                        </div>
+                        <div class="info-value">{{ characterRace || '未知' }}</div>
                       </div>
-                      <div class="info-value">{{ characterRace || '未知' }}</div>
-                    </div>
-                    <div class="info-item small">
-                      <div class="info-label">
-                        <i class="fas fa-birthday-cake"></i>
-                        <span>年龄</span>
+                      <div class="info-item small">
+                        <div class="info-label">
+                          <i class="fas fa-birthday-cake"></i>
+                          <span>年龄</span>
+                        </div>
+                        <div class="info-value">{{ characterAge || '未知' }}</div>
                       </div>
-                      <div class="info-value">{{ characterAge || '未知' }}</div>
                     </div>
-                  </div>
 
-                  <!-- 第三行：身份、精神状态 -->
-                  <div class="info-row">
-                    <div class="info-item small">
-                      <div class="info-label">
-                        <i class="fas fa-crown"></i>
-                        <span>身份</span>
+                    <!-- 第三行：身份、精神状态 -->
+                    <div class="info-row">
+                      <div class="info-item small">
+                        <div class="info-label">
+                          <i class="fas fa-crown"></i>
+                          <span>身份</span>
+                        </div>
+                        <div class="info-value">{{ characterIdentity || '未知' }}</div>
                       </div>
-                      <div class="info-value">{{ characterIdentity || '未知' }}</div>
-                    </div>
-                    <div class="info-item small">
-                      <div class="info-label">
-                        <i class="fas fa-brain"></i>
-                        <span>精神状态</span>
+                      <div class="info-item small">
+                        <div class="info-label">
+                          <i class="fas fa-brain"></i>
+                          <span>精神状态</span>
+                        </div>
+                        <div class="info-value">{{ mentalState || '未知' }}</div>
                       </div>
-                      <div class="info-value">{{ mentalState || '未知' }}</div>
                     </div>
                   </div>
                 </div>
 
                 <!-- 右侧：状态条 -->
                 <div class="status-bars">
-                  <div v-for="status in statusBars" :key="status.key" class="health-item">
-                    <div class="health-label">
-                      <i :class="status.icon"></i>
-                      <span>{{ status.label }}</span>
-                    </div>
-                    <div class="health-bar-container">
-                      <div class="health-bar-fill" :class="status.class" :style="{ width: status.percent + '%' }"></div>
-                    </div>
-                    <div class="health-value">{{ status.current }} / {{ status.max }}</div>
+                  <!-- 移动端折叠标题 -->
+                  <div
+                    class="mobile-collapse-header"
+                    @click="collapsedSections.statusBars = !collapsedSections.statusBars"
+                  >
+                    <i class="fas fa-heart"></i>
+                    <span>状态信息</span>
+                    <i
+                      :class="[
+                        'fas',
+                        collapsedSections.statusBars ? 'fa-chevron-down' : 'fa-chevron-up',
+                        'collapse-icon',
+                      ]"
+                    ></i>
                   </div>
-
-                  <!-- 灵魂觉醒度 -->
-                  <div class="soul-awakening">
-                    <div class="soul-label">
-                      <i class="fas fa-fire"></i>
-                      <span>灵魂觉醒度</span>
+                  <div v-if="!collapsedSections.statusBars" class="status-bars-content">
+                    <div v-for="status in statusBars" :key="status.key" class="health-item">
+                      <div class="health-label">
+                        <i :class="status.icon"></i>
+                        <span>{{ status.label }}</span>
+                      </div>
+                      <div class="health-bar-container">
+                        <div
+                          class="health-bar-fill"
+                          :class="status.class"
+                          :style="{ width: status.percent + '%' }"
+                        ></div>
+                      </div>
+                      <div class="health-value">{{ status.current }} / {{ status.max }}</div>
                     </div>
-                    <div class="circular-progress-container">
-                      <svg class="circular-progress" viewBox="0 0 100 100">
-                        <defs>
-                          <!-- 定义圆形裁剪路径 -->
-                          <clipPath id="circleClip">
-                            <circle cx="50" cy="50" r="45" />
-                          </clipPath>
-                          <!-- 定义液体填充的裁剪路径（从底部向上） -->
-                          <clipPath :id="`liquidClip-${soulAwakeningPercent}`">
-                            <rect
-                              x="5"
-                              :y="50 + 45 - 45 * 2 * (soulAwakeningPercent / 100)"
-                              width="90"
-                              :height="45 * 2 * (soulAwakeningPercent / 100)"
-                            />
-                          </clipPath>
-                        </defs>
-                        <!-- 背景圆 -->
-                        <circle cx="50" cy="50" r="45" fill="none" stroke="rgba(0, 0, 0, 0.3)" stroke-width="8" />
-                        <!-- 液体填充（使用圆形，通过clipPath控制高度） -->
-                        <circle
-                          cx="50"
-                          cy="50"
-                          r="45"
-                          fill="#4a4a4a"
-                          :clip-path="`url(#liquidClip-${soulAwakeningPercent})`"
-                          class="liquid-fill"
-                        />
-                        <!-- 液体表面高光效果 -->
-                        <circle
-                          v-if="soulAwakeningPercent > 0 && soulAwakeningPercent < 100"
-                          cx="50"
-                          cy="50"
-                          r="45"
-                          fill="#5a5a5a"
-                          :clip-path="`url(#liquidClip-${soulAwakeningPercent})`"
-                          class="liquid-surface"
-                          opacity="0.3"
-                        />
-                      </svg>
-                      <div class="circular-progress-text">
-                        <span class="progress-value">{{ soulAwakeningCurrent }} / {{ soulAwakeningMax }}</span>
+
+                    <!-- 灵魂觉醒度 -->
+                    <div class="soul-awakening">
+                      <div class="soul-label">
+                        <i class="fas fa-fire"></i>
+                        <span>灵魂觉醒度</span>
+                      </div>
+                      <div class="circular-progress-container">
+                        <svg class="circular-progress" viewBox="0 0 100 100">
+                          <defs>
+                            <!-- 定义圆形裁剪路径 -->
+                            <clipPath id="circleClip">
+                              <circle cx="50" cy="50" r="45" />
+                            </clipPath>
+                            <!-- 定义液体填充的裁剪路径（从底部向上） -->
+                            <clipPath :id="`liquidClip-${soulAwakeningPercent}`">
+                              <rect
+                                x="5"
+                                :y="50 + 45 - 45 * 2 * (soulAwakeningPercent / 100)"
+                                width="90"
+                                :height="45 * 2 * (soulAwakeningPercent / 100)"
+                              />
+                            </clipPath>
+                          </defs>
+                          <!-- 背景圆 -->
+                          <circle cx="50" cy="50" r="45" fill="none" stroke="rgba(0, 0, 0, 0.3)" stroke-width="8" />
+                          <!-- 液体填充（使用圆形，通过clipPath控制高度） -->
+                          <circle
+                            cx="50"
+                            cy="50"
+                            r="45"
+                            fill="#4a4a4a"
+                            :clip-path="`url(#liquidClip-${soulAwakeningPercent})`"
+                            class="liquid-fill"
+                          />
+                          <!-- 液体表面高光效果 -->
+                          <circle
+                            v-if="soulAwakeningPercent > 0 && soulAwakeningPercent < 100"
+                            cx="50"
+                            cy="50"
+                            r="45"
+                            fill="#5a5a5a"
+                            :clip-path="`url(#liquidClip-${soulAwakeningPercent})`"
+                            class="liquid-surface"
+                            opacity="0.3"
+                          />
+                        </svg>
+                        <div class="circular-progress-text">
+                          <span class="progress-value">{{ soulAwakeningCurrent }} / {{ soulAwakeningMax }}</span>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1610,6 +1648,8 @@ const showAccessoryDescription = ref(true); // true=显示描述，false=显示�
 const equipmentPointsLimit = ref<number>(0);
 // 折叠状态（默认全部折叠）
 const collapsedSections = ref<Record<string, boolean>>({
+  characterInfo: true, // 角色信息（移动端默认折叠）
+  statusBars: false, // 状态条（移动端默认展开）
   weaponMainHand: true, // 主手
   weaponOffHand: true, // 副手
   armorHead: true, // 头部
@@ -5068,6 +5108,11 @@ onUnmounted(() => {
   gap: 12px;
 }
 
+// 移动端折叠标题（桌面端隐藏）
+.mobile-collapse-header {
+  display: none;
+}
+
 .attributes-radar {
   padding-top: 12px;
   border-top: 1px solid rgba(192, 192, 192, 0.3);
@@ -6414,15 +6459,73 @@ onUnmounted(() => {
     align-items: flex-start;
   }
 
+  // 移动端折叠标题样式（仅在移动端显示）
+  .mobile-collapse-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #c0c0c0;
+    padding: 8px 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(192, 192, 192, 0.3);
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-bottom: 8px;
+    user-select: none;
+
+    i {
+      font-size: 14px;
+      color: #c0c0c0;
+      transition: color 0.2s ease;
+    }
+
+    .collapse-icon {
+      margin-left: auto;
+      font-size: 12px;
+      transition: transform 0.2s ease;
+    }
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.3);
+      border-color: rgba(192, 192, 192, 0.4);
+      color: #e0e0e0;
+
+      i {
+        color: #e0e0e0;
+      }
+    }
+  }
+
+  // 在移动端，默认显示内容（不折叠）
+  .character-info-content,
+  .status-bars-content {
+    display: block;
+  }
+
   .character-info {
     gap: 8px;
     flex: 1;
     min-width: 0;
   }
 
+  .character-info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
   .status-bars {
     flex: 1;
     min-width: 0;
+    gap: 10px;
+  }
+
+  .status-bars-content {
+    display: flex;
+    flex-direction: column;
     gap: 10px;
   }
 
@@ -6445,7 +6548,7 @@ onUnmounted(() => {
   @media (max-width: 480px) {
     .health-top-section {
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
     }
 
     .character-info,
@@ -6455,6 +6558,16 @@ onUnmounted(() => {
 
     .info-row {
       grid-template-columns: 1fr;
+    }
+
+    .mobile-collapse-header {
+      padding: 6px 8px;
+      font-size: 12px;
+      margin-bottom: 6px;
+
+      i {
+        font-size: 12px;
+      }
     }
   }
 
