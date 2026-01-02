@@ -520,6 +520,7 @@ function parse_configuration(entry: Entry): (_env: any, argv: any) => webpack.Co
         return callback();
       }
 
+<<<<<<< HEAD
       const builtin = ['vue3-pixi', 'vue-demi'];
       if (builtin.includes(request)) {
         return callback();
@@ -528,6 +529,12 @@ function parse_configuration(entry: Entry): (_env: any, argv: any) => webpack.Co
         return callback();
       }
       if (['react'].some(key => request.includes(key))) {
+=======
+      if (
+        ['vue', 'vue-router', 'pixi.js'].every(key => request !== key) &&
+        ['pixi', 'react', 'vue'].some(key => request.includes(key))
+      ) {
+>>>>>>> ce4db6a538b394ed513225b312654e5fddfe07fd
         return callback();
       }
       const global = {
